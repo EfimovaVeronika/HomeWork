@@ -8,15 +8,6 @@ public class Wall extends Obstruction {
 
     @Override
     public boolean overcome(IMoving essence) {
-        if (getSize() <= essence.getJumpLimit()) {
-            essence.running();
-
-            return true;
-        }
-        else {
-
-            return false;
-        }
-
+       return essence.jumping(getSize());
     }
 }

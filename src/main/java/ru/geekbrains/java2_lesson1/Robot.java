@@ -10,23 +10,28 @@ public class Robot implements IMoving {
     }
 
     @Override
-    public int getJumpLimit() {
-        return jumpLimit;
+    public boolean jumping(int height) {
+        if (height <= jumpLimit) {
+            System.out.println("Робот прыгнул на " + height);
+            return true;
+        }
+        else {
+            System.out.println("Робот не может прыгнуть так высоко");
+            return false;
+        }
+
     }
 
     @Override
-    public int getRunLimit() {
-        return runLimit;
-    }
-
-    @Override
-    public void jumping() {
-        System.out.println("Робот пробежал");
-    }
-
-    @Override
-    public void running() {
-        System.out.println("Робот прыгнул");
+    public boolean running(int dist) {
+        if (dist <= runLimit) {
+            System.out.println("Робот пробежал " + dist);
+            return true;
+        }
+        else {
+            System.out.println("Робот не может столько пробежать");
+            return false;
+        }
 
     }
 }

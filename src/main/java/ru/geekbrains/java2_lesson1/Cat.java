@@ -10,23 +10,28 @@ public class Cat implements IMoving {
     }
 
     @Override
-    public int getJumpLimit() {
-        return jumpLimit;
+    public boolean jumping(int height) {
+        if (height <= jumpLimit) {
+            System.out.println("Кот прыгнул на " + height);
+            return true;
+        }
+        else {
+            System.out.println("Кот не может прыгнуть так высоко");
+            return false;
+        }
+
     }
 
     @Override
-    public int getRunLimit() {
-        return runLimit;
-    }
-
-    @Override
-    public void jumping() {
-        System.out.println("Кот пробежал");
-    }
-
-    @Override
-    public void running() {
-        System.out.println("Кот прыгнул");
+    public boolean running(int dist) {
+        if (dist <= runLimit) {
+            System.out.println("Кот пробежал " + dist);
+            return true;
+        }
+        else {
+            System.out.println("Кот не может столько пробежать");
+            return false;
+        }
 
     }
 }
