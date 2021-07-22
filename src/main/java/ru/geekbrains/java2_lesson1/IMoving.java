@@ -1,11 +1,7 @@
 package ru.geekbrains.java2_lesson1;
 
 public interface IMoving {
-     void jumping();
+    boolean jumping(int height);
 
-     void running();
-
-     int getRunLimit();
-
-     int getJumpLimit();
+     boolean running(int dist);
 }

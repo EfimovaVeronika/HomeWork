@@ -8,15 +8,8 @@ public class RunningTrack extends Obstruction {
 
     @Override
     public boolean overcome(IMoving essence) {
-        if (getSize() <= essence.getRunLimit()) {
-            essence.jumping();
-
-            return true;
-        }
-        else {
-
-            return false;
-        }
+         return essence.running(getSize());
 
     }
 }
+
